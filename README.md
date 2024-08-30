@@ -1,43 +1,20 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# Zev Lee OS &nbsp; [![bluebuild](https://github.com/zevlee/os/actions/workflows/build.yml/badge.svg)](https://github.com/zevlee/os/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+My personal OS image. There's nothing complicated going on here. I just added
+the packages I wanted and removed the ones I didn't.
 
-After setup, it is recommended you update this README to describe your custom image.
+## My Changes
 
-## Installation
+I based my image from the `silverblue-nvidia` build of Universal Blue. That way
+I have the necessary drivers and codecs pre-installed while still sticking
+fairly close upstream to Fedora Silverblue.
 
-> **Warning**  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+I used rpm-ostree to install the base packages I want, most of which are
+developed by the GNOME software team. I don't want to install these as
+flatpaks.
 
-To rebase an existing atomic Fedora installation to the latest build:
+For flatpaks, I have everything that I want installed listed in the recipe
+file.
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
-
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
-
-## Verification
-
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
-
-```bash
-cosign verify --key cosign.pub ghcr.io/blue-build/template
-```
+That's about it. As of the time of writing, I don't have any crazy
+configurations set.
