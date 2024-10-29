@@ -47,8 +47,6 @@ modules:
       - htop
       - nvtop
       - gnome-classic-session
-      - gnome-classic-session-xsession
-      - gnome-session-xsession
       - gnome-shell-extension-apps-menu
       - gnome-shell-extension-launch-new-instance
       - gnome-shell-extension-places-menu
