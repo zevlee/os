@@ -38,7 +38,9 @@ modules:
       - sushi
       - gnome-text-editor
       - R-core
-      # - R-core-devel
+      - qemu
+      - qemu-kvm
+      - virt-manager
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
