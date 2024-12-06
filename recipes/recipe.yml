@@ -1,3 +1,5 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: os
 # description will be included in the image's metadata
@@ -60,9 +62,6 @@ modules:
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
         - com.github.rafostar.Clapper
         - org.cryptomator.Cryptomator
@@ -84,5 +83,6 @@ modules:
       # only normal flatpak applications are (like Floorp Lightning web browser in this example).
       # Installing different branches of the same Flatpak is not supported.
       remove:
+    user: {} # Also add Flathub user repo, but no user packages
         
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
