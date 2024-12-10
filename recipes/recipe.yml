@@ -43,6 +43,7 @@ modules:
       - qemu
       - qemu-kvm
       - virt-manager
+      - gdk-pixbuf2-modules-extra # fix issue with xpm icon display
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
