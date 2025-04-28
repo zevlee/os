@@ -6,7 +6,7 @@ name: os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-nvidia
+base-image: ghcr.io/ublue-os/cosmic-atomic-nvidia
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -49,15 +49,15 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - gnome-tour
-      - htop
-      - nvtop
-      - gnome-classic-session
-      - gnome-shell-extension-apps-menu
-      - gnome-shell-extension-launch-new-instance
-      - gnome-shell-extension-places-menu
-      - gnome-shell-extension-window-list
-      - gnome-shell-extension-background-logo
+      # - gnome-tour
+      # - htop
+      # - nvtop
+      # - gnome-classic-session
+      # - gnome-shell-extension-apps-menu
+      # - gnome-shell-extension-launch-new-instance
+      # - gnome-shell-extension-places-menu
+      # - gnome-shell-extension-window-list
+      # - gnome-shell-extension-background-logo
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
