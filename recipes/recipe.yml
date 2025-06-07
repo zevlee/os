@@ -79,7 +79,7 @@ modules:
         - org.signal.Signal
         - chat.simplex.simplex
         - com.valvesoftware.Steam
-        - org.tenacityaudio.Tenacity
+        - org.audacityteam.Audacity
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
