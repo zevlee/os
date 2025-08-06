@@ -30,15 +30,8 @@ modules:
       - qemu
       - qemu-kvm
       - virt-manager
-      # - gnome-tweaks
-      # - gnome-shell-extension-dash-to-panel
-      # - gnome-shell-extension-user-theme
-      # - gnome-shell-extension-appindicator
       # - baobab
       # - evince
-      # - gnome-extensions-app
-      # - gnome-font-viewer
-      # - gnome-logs
       # - gnome-music
       # - loupe
       # - sushi
@@ -49,21 +42,13 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      # - gnome-tour
-      # - htop
-      # - nvtop
-      # - gnome-classic-session
-      # - gnome-shell-extension-apps-menu
-      # - gnome-shell-extension-launch-new-instance
-      # - gnome-shell-extension-places-menu
-      # - gnome-shell-extension-window-list
-      # - gnome-shell-extension-background-logo
 
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
-        install:
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
           - com.bitwarden.desktop
           - com.github.rafostar.Clapper
           - org.cryptomator.Cryptomator
@@ -81,5 +66,6 @@ modules:
           - chat.simplex.simplex
           - com.valvesoftware.Steam
           - org.audacityteam.Audacity
+      - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
