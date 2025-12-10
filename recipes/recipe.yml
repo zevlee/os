@@ -6,7 +6,7 @@ name: os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/cosmic-atomic-nvidia
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -17,33 +17,52 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: akmods
+    install: []
+    nvidia-driver: nvidia-open
+
   - type: dnf
     repos:
       copr:
         - atim/starship
     install:
       packages:
-        - chromium
-        - wireguard-tools
-        - steam-devices
-        - seahorse
-        - R-core
-        - qemu
-        - qemu-kvm
-        - virt-manager
-        # - baobab
-        # - evince
-        # - gnome-music
-        # - loupe
-        # - sushi
-        # - gnome-text-editor
-        # - gdk-pixbuf2-modules-extra # fix issue with xpm icon display
+      - chromium
+      - gnome-tweaks
+      - wireguard-tools
+      - steam-devices
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-user-theme
+      - gnome-shell-extension-appindicator
+      - baobab
+      - evince
+      - gnome-extensions-app
+      - gnome-font-viewer
+      - gnome-logs
+      - loupe
+      - seahorse
+      - sushi
+      - gnome-text-editor
+      - R-core
+      - qemu
+      - qemu-kvm
+      - virt-manager
+      - gdk-pixbuf2-modules-extra # fix issue with xpm icon display
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-tour
+        - htop
+        - nvtop
+        - gnome-classic-session
+        - gnome-shell-extension-apps-menu
+        - gnome-shell-extension-launch-new-instance
+        - gnome-shell-extension-places-menu
+        - gnome-shell-extension-window-list
+        - gnome-shell-extension-background-logo
 
   - type: default-flatpaks
     configurations:
