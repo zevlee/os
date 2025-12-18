@@ -24,12 +24,11 @@ modules:
   - type: dnf
     repos:
       files:
-        - https://negativo17.org/repos/fedora-multimedia.repo
         - https://negativo17.org/repos/fedora-steam.repo
     install:
       packages:
-        - ffmpeg
         - steam
+        - ffmpeg
         - chromium
         - gnome-tweaks
         - wireguard-tools
@@ -90,7 +89,6 @@ modules:
           - org.libretro.RetroArch
           - org.signal.Signal
           - chat.simplex.simplex
-          - com.valvesoftware.Steam
           - org.gnome.Showtime
       - scope: user # Also add Flathub user repo, but no user packages
 
