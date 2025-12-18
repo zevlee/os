@@ -23,31 +23,34 @@ modules:
 
   - type: dnf
     repos:
-      copr:
-        - atim/starship
+      files:
+        - https://negativo17.org/repos/fedora-multimedia.repo
+        - https://negativo17.org/repos/fedora-steam.repo
     install:
       packages:
-      - chromium
-      - gnome-tweaks
-      - wireguard-tools
-      - steam-devices
-      - gnome-shell-extension-dash-to-panel
-      - gnome-shell-extension-user-theme
-      - gnome-shell-extension-appindicator
-      - baobab
-      - evince
-      - gnome-extensions-app
-      - gnome-font-viewer
-      - gnome-logs
-      - loupe
-      - seahorse
-      - sushi
-      - gnome-text-editor
-      - R-core
-      - qemu
-      - qemu-kvm
-      - virt-manager
-      - gdk-pixbuf2-modules-extra # fix issue with xpm icon display
+        - ffmpeg
+        - steam
+        - chromium
+        - gnome-tweaks
+        - wireguard-tools
+        - steam-devices
+        - gnome-shell-extension-dash-to-panel
+        - gnome-shell-extension-user-theme
+        - gnome-shell-extension-appindicator
+        - baobab
+        - evince
+        - gnome-extensions-app
+        - gnome-font-viewer
+        - gnome-logs
+        - loupe
+        - seahorse
+        - sushi
+        - gnome-text-editor
+        - R-core
+        - qemu
+        - qemu-kvm
+        - virt-manager
+        - gdk-pixbuf2-modules-extra # fix issue with xpm icon display
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
