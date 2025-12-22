@@ -5,11 +5,14 @@ the packages I wanted and removed the ones I didn't.
 
 ## My Changes
 
-I based my image from the `silverblue-nvidia` build of Universal Blue. That way
-I have the necessary drivers and codecs pre-installed while still sticking
-fairly close upstream to Fedora Silverblue.
+I based my image from the
+`silverblue-main` build of Universal Blue.
+Then I use akmods scripts to have the
+necessary drivers and codecs pre-installed
+while still sticking fairly close upstream
+to Fedora Silverblue.
 
-I used rpm-ostree to install the base packages I want, most of which are
+I used dnf to install the base packages I want, most of which are
 developed by the GNOME software team. I don't want to install these as
 flatpaks.
 
