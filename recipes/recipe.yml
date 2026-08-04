@@ -49,6 +49,7 @@ modules:
         - seahorse
         - sushi
         - gnome-text-editor
+        - sequoia-sq
         - R-core
         - qemu
         - qemu-kvm
