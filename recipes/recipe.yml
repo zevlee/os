@@ -92,7 +92,6 @@ modules:
           - org.qbittorrent.qBittorrent
           - org.rncbc.qpwgraph
           - org.libretro.RetroArch
-          - org.signal.Signal
           - chat.simplex.simplex
       - scope: user # Also add Flathub user repo, but no user packages
 
